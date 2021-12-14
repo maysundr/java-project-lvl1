@@ -23,3 +23,10 @@ compileJava {
     options.release = 16
 }
 
+
+
+repositories {
+    mavenCentral()
+}
+
+
