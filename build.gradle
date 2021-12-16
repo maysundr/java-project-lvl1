@@ -23,10 +23,12 @@ compileJava {
     options.release = 16
 }
 
-
-
 repositories {
     mavenCentral()
+}
+
+run {
+    standardInput = System.in
 }
 
 
