@@ -8,10 +8,10 @@ public class Cli {
     }
 
     public static void greetUser() {
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
         Scanner console = new Scanner(System.in);
         String name = console.nextLine();
-        System.out.println("Welcome to the Brain Games!");
-        System.out.println("May I have your name? " + name);
         System.out.println("Hello, " + name + "!");
         console.close();
     }
