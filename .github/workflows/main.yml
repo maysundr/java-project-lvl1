@@ -5,4 +5,4 @@
       steps:
         - uses: actions/checkout@v2
         - name: Check out repository code
-        - run: make build
+          run: make build
