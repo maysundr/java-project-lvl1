@@ -20,7 +20,6 @@ public class Calc extends Engine {
             System.out.print(operator);
             System.out.println(" " + randomNumberRight);
             var rightAnswer = getResultExpression(randomNumberLeft, randomNumberRight, operator);
-            System.out.println(rightAnswer);
             System.out.print("Your answer: ");
             Scanner console = new Scanner(System.in);
             var answerEven = console.nextInt();
