@@ -6,3 +6,5 @@
 ![CI](https://github.com/maysundr/java-project-lvl1/actions/workflows/main.yml/badge.svg)
 
 [![asciicast](https://asciinema.org/a/3X9iXjNcbmiCb8WVLdp70zLFI.svg)](https://asciinema.org/a/3X9iXjNcbmiCb8WVLdp70zLFI)
+
+[![asciicast](https://asciinema.org/a/wIne4V5WhLTRkVedbK3Fr9DQV.svg)](https://asciinema.org/a/wIne4V5WhLTRkVedbK3Fr9DQV)
