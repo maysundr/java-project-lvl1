@@ -29,6 +29,7 @@ public class Calc extends Engine {
             } else {
                 System.out.println("'" + answerEven + "'" + " is wrong answer ;(. Correct answer was "
                         + "'" + rightAnswer + "'.");
+                System.out.println("Let's try again, " + name + "!");
                 System.exit(0);
             }
         }
