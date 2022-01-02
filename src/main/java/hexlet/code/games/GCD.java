@@ -15,7 +15,7 @@ public class GCD extends Engine {
             System.out.print("Question: ");
             System.out.println(randomNumberLeft + " " + randomNumberRight);
             var rightAnswer = getGcd(randomNumberLeft, randomNumberRight);
-            System.out.print("Your answer: " + rightAnswer);
+            System.out.print("Your answer: ");
             if (getConsole().hasNextInt()) {
                 //Engine.getGameBody(String.valueOf(rightAnswer), String.valueOf(answerEven), name);
                 var answerEven = getConsole().nextInt();
