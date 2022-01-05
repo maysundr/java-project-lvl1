@@ -17,6 +17,7 @@ public class Engine {
     protected static final int GAME_CALC = 3;
     protected static final int GAME_GCD = 4;
     protected static final int GAME_PROGRESSION = 5;
+    protected static final int GAME_PRIME = 6;
 
     private static Scanner console = new Scanner(System.in);
 
@@ -43,7 +44,6 @@ public class Engine {
 
     public static String getAnswerEven() {
         System.out.print("Your answer: ");
-        //Scanner console = new Scanner(System.in);
         String answerEven = console.nextLine();
         return answerEven;
     }
