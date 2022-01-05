@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
@@ -15,6 +16,7 @@ public class Engine {
     protected static final int GAME_EVEN = 2;
     protected static final int GAME_CALC = 3;
     protected static final int GAME_GCD = 4;
+    protected static final int GAME_PROGRESSION = 5;
 
     private static Scanner console = new Scanner(System.in);
 
@@ -32,6 +34,11 @@ public class Engine {
         final var factor = 100;
         int randomNumber = (int) ((Math.random()) * factor);
         return randomNumber;
+    }
+
+    public static int generateRandomInt(int upperRange) {
+        Random random = new Random();
+        return random.nextInt(upperRange);
     }
 
     public static String getAnswerEven() {
