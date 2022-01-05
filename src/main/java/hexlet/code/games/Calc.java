@@ -3,7 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class Calc extends Engine {
 
@@ -21,18 +20,26 @@ public class Calc extends Engine {
             System.out.println(" " + randomNumberRight);
             var rightAnswer = getResultExpression(randomNumberLeft, randomNumberRight, operator);
             System.out.print("Your answer: ");
-            Scanner console = new Scanner(System.in);
-            var answerEven = console.nextInt();
-            if (answerEven == rightAnswer) {
-                System.out.println("Correct!");
-                index++;
+            if (getConsole().hasNextInt()) {
+                var answerEven = getConsole().nextInt();
+                if (answerEven == rightAnswer) {
+                    System.out.println("Correct!");
+                    index++;
+                } else {
+                    System.out.println("'" + answerEven + "'" + " is wrong answer ;(. Correct answer was "
+                            + "'" + rightAnswer + "'.");
+                    System.out.println("Let's try again, " + name + "!");
+                    System.exit(0);
+                }
             } else {
+                var answerEven = getConsole().nextLine();
                 System.out.println("'" + answerEven + "'" + " is wrong answer ;(. Correct answer was "
                         + "'" + rightAnswer + "'.");
                 System.out.println("Let's try again, " + name + "!");
                 System.exit(0);
             }
         }
+
         if (index == CORRECT_ANSWER) {
             System.out.println("Congratulations, " + name + "!");
         }
