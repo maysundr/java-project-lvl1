@@ -30,7 +30,7 @@ public class Even extends Engine {
                 System.exit(0);
             } else {
                 System.out.println("'" + answerEven + "'"
-                        + " is wrong answer ;(. Correct answer was " + ANSWER_NO + ".");
+                        + " is wrong answer ;(. Correct answer was " + "'" + ANSWER_NO + "'" + ".");
                 System.exit(0);
             }
         }
