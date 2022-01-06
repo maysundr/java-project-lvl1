@@ -60,6 +60,7 @@ public class Progression extends Engine {
             }
         }
         System.out.println(sb);
+        //System.out.println(rightAnswer);
         return rightAnswer;
 
     }
