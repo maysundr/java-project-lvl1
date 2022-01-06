@@ -21,13 +21,14 @@ public class Progression extends Engine {
 
             if (getConsole().hasNextInt()) {
                 var answerUser = getConsole().nextInt();
-                if (answerUser == rightAnswer) {
+                if (rightAnswer == answerUser) {
                     getCorrectAnswer();
                 } else {
                     getWrongAnswer(answerUser, rightAnswer, name);
                 }
             } else {
                 var answerUser = getConsole().nextLine();
+                System.out.println(answerUser);
                 getWrongAnswer(answerUser, rightAnswer, name);
             }
         }
