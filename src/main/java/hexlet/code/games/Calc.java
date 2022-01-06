@@ -7,53 +7,42 @@ import java.util.Random;
 public class Calc extends Engine {
 
     public static void calcGame() {
+
         var name = Engine.greetUser();
-        int index = 0;
+
         System.out.println("What is the result of the expression?");
+
         for (int i = 0; i < CORRECT_ANSWER; i++) {
+
             var randomNumberLeft = Engine.getRandomNumber();
             var randomNumberRight = Engine.getRandomNumber();
             var operator = getExpression();
+
             System.out.print("Question: ");
             System.out.print(randomNumberLeft + " ");
             System.out.print(operator);
             System.out.println(" " + randomNumberRight);
+
             var rightAnswer = getResultExpression(randomNumberLeft, randomNumberRight, operator);
+
             System.out.print("Your answer: ");
             if (getConsole().hasNextInt()) {
                 var answerEven = getConsole().nextInt();
                 if (answerEven == rightAnswer) {
-                    System.out.println("Correct!");
-                    index++;
+                    getCorrectAnswer();
                 } else {
-                    System.out.println("'" + answerEven + "'" + " is wrong answer ;(. Correct answer was "
-                            + "'" + rightAnswer + "'.");
-                    System.out.println("Let's try again, " + name + "!");
-                    System.exit(0);
+                    getWrongAnswer(answerEven, rightAnswer, name);
                 }
             } else {
                 var answerEven = getConsole().nextLine();
-                System.out.println("'" + answerEven + "'" + " is wrong answer ;(. Correct answer was "
-                        + "'" + rightAnswer + "'.");
-                System.out.println("Let's try again, " + name + "!");
-                System.exit(0);
+                getWrongAnswer(answerEven, rightAnswer, name);
             }
         }
-
-        if (index == CORRECT_ANSWER) {
-            System.out.println("Congratulations, " + name + "!");
-        }
+        getCongratulation(name);
     }
 
-    /*public static int generateRandomInt(){
-        Random random = new Random();
-        var i = random.nextInt(3);
-        return i;
-    }
 
-     */
-
-    public static char getExpression() {
+    private static char getExpression() {
         char operator = ' ';
         Random random = new Random();
         switch (random.nextInt(MAX_BOUND_RANDOM)) {
@@ -72,7 +61,7 @@ public class Calc extends Engine {
         return operator;
     }
 
-    public static int getResultExpression(int a, int b, char operator) {
+    private static int getResultExpression(int a, int b, char operator) {
         int result = 0;
         switch (operator) {
             case '*':
