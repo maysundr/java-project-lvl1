@@ -54,7 +54,7 @@ public class Progression extends Engine {
 
             if (i == missingElement) {
                 rightAnswer = progression[i];
-                sb.append("..");
+                sb.append(".. ");
             } else {
                 sb.append(progression[i]).append(" ");
             }
