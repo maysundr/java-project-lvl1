@@ -25,8 +25,7 @@ public class Engine {
     public static String greetUser() {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
-        //Scanner console = new Scanner(System.in);
-        String userName = console.nextLine();
+        String userName = getConsole().nextLine();
         System.out.println("Hello, " + userName + "!");
         return userName;
     }
@@ -42,26 +41,43 @@ public class Engine {
         return random.nextInt(upperRange);
     }
 
-    public static String getAnswerEven() {
+    public static String getAnswerUser() {
         System.out.print("Your answer: ");
-        String answerEven = console.nextLine();
-        return answerEven;
+        String answerUser = console.nextLine();
+        return answerUser;
     }
 
     public static Scanner getConsole() {
         return console;
     }
 
-    public static void getGameBody(String rightAnswer, String answerEven, String name) {
-        if (answerEven.equals(rightAnswer)) {
-            System.out.println("Correct!");
-            score++;
-        } else {
-            System.out.println("'" + answerEven + "'" + " is wrong answer ;(. Correct answer was "
-                    + "'" + rightAnswer + "'.");
-            System.exit(0);
-        }
+    public static void getCorrectAnswer() {
+        System.out.println("Correct!");
+        score++;
+    }
 
+    public static void getWrongAnswer(String answerUser, String rightAnswer, String name) {
+        System.out.println("'" + answerUser + "'"
+                + " is wrong answer ;(. Correct answer was " + "'" + rightAnswer + "'" + ".");
+        System.out.println("Let's try again, " + name + "!");
+        System.exit(0);
+    }
+
+    public static void getWrongAnswer(int answerUser, int rightAnswer, String name) {
+        System.out.println("'" + answerUser + "'"
+                + " is wrong answer ;(. Correct answer was " + "'" + rightAnswer + "'" + ".");
+        System.out.println("Let's try again, " + name + "!");
+        System.exit(0);
+    }
+
+    public static void getWrongAnswer(String answerUser, int rightAnswer, String name) {
+        System.out.println("'" + answerUser + "'"
+                + " is wrong answer ;(. Correct answer was " + "'" + rightAnswer + "'" + ".");
+        System.out.println("Let's try again, " + name + "!");
+        System.exit(0);
+    }
+
+    public static void getCongratulation(String name) {
         if (score == CORRECT_ANSWER) {
             System.out.println("Congratulations, " + name + "!");
         }
