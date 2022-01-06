@@ -40,7 +40,7 @@ public class Progression extends Engine {
         final int lengthProgression = 10;
         final int missingElement = generateRandomInt(lengthProgression);
         final int startElement = generateRandomInt(lengthProgression);
-        final int stepProgression = generateRandomInt(lengthProgression);
+        final int stepProgression = generateRandomInt(lengthProgression + 1);
 
         int[] progression = new int[lengthProgression];
 
