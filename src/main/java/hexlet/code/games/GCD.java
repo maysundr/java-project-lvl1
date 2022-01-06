@@ -6,42 +6,39 @@ public class GCD extends Engine {
 
 
     public static void gcdGame() {
+
         var name = Engine.greetUser();
+
         System.out.println("Find the greatest common divisor of given numbers.");
-        int index = 0;
+
         for (int i = 0; i < CORRECT_ANSWER; i++) {
+
             var randomNumberLeft = Engine.getRandomNumber();
             var randomNumberRight = Engine.getRandomNumber();
+
             System.out.print("Question: ");
             System.out.println(randomNumberLeft + " " + randomNumberRight);
+
             var rightAnswer = getGcd(randomNumberLeft, randomNumberRight);
+
             System.out.print("Your answer: ");
+
             if (getConsole().hasNextInt()) {
-                //Engine.getGameBody(String.valueOf(rightAnswer), String.valueOf(answerEven), name);
                 var answerEven = getConsole().nextInt();
                 if (answerEven == rightAnswer) {
-                    System.out.println("Correct!");
-                    index++;
+                    getCorrectAnswer();
                 } else {
-                    System.out.println("'" + answerEven + "'" + " is wrong answer ;(. Correct answer was "
-                            + "'" + rightAnswer + "'.");
-                    System.out.println("Let's try again, " + name + "!");
-                    System.exit(0);
+                    getWrongAnswer(answerEven, rightAnswer, name);
                 }
             } else {
                 var answerEven = getConsole().nextLine();
-                System.out.println("'" + answerEven + "'" + " is wrong answer ;(. Correct answer was "
-                        + "'" + rightAnswer + "'.");
-                System.out.println("Let's try again, " + name + "!");
-                System.exit(0);
+                getWrongAnswer(answerEven, rightAnswer, name);
             }
         }
-        if (index == CORRECT_ANSWER) {
-            System.out.println("Congratulations, " + name + "!");
-        }
+        getCongratulation(name);
     }
 
-    public static int getGcd(int a, int b) {
+    private static int getGcd(int a, int b) {
         int temp;
         while (b != 0) {
             temp = b;
