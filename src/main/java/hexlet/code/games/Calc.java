@@ -27,15 +27,15 @@ public class Calc extends Engine {
 
             System.out.print("Your answer: ");
             if (getConsole().hasNextInt()) {
-                var answerEven = getConsole().nextInt();
-                if (answerEven == rightAnswer) {
+                var answerUser = getConsole().nextInt();
+                if (answerUser == rightAnswer) {
                     getCorrectAnswer();
                 } else {
-                    getWrongAnswer(answerEven, rightAnswer, name);
+                    getWrongAnswer(answerUser, rightAnswer, name);
                 }
             } else {
-                var answerEven = getConsole().nextLine();
-                getWrongAnswer(answerEven, rightAnswer, name);
+                var answerUser = getConsole().nextLine();
+                getWrongAnswer(answerUser, rightAnswer, name);
             }
         }
         getCongratulation(name);
