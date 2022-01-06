@@ -29,7 +29,7 @@ public class App {
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
         Scanner console = new Scanner(System.in);
-        int numberGame = console.nextInt();
+        var numberGame = console.nextInt();
         System.out.println();
 
         if (numberGame == GAME_EXIT) {
