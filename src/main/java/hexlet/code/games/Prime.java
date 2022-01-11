@@ -1,8 +1,16 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
 
-import static hexlet.code.Engine.*;
+import static hexlet.code.Engine.ANSWER_NO;
+import static hexlet.code.Engine.ANSWER_YES;
+import static hexlet.code.Engine.CORRECT_ANSWER;
+import static hexlet.code.Engine.getCongratulation;
+import static hexlet.code.Engine.getConsole;
+import static hexlet.code.Engine.getCorrectAnswer;
+import static hexlet.code.Engine.getDescription;
+import static hexlet.code.Engine.getRandomNumber;
+import static hexlet.code.Engine.getWrongAnswer;
+import static hexlet.code.Engine.greetUser;
 
 public class Prime {
 
@@ -10,7 +18,7 @@ public class Prime {
 
     public static void primeGame() {
 
-        var name = Engine.greetUser();
+        var name = greetUser();
 
         getDescription(DESCRIPTION);
 
