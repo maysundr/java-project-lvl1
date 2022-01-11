@@ -2,13 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import static hexlet.code.Engine.ANSWER_NO;
-import static hexlet.code.Engine.ANSWER_YES;
-import static hexlet.code.Engine.CORRECT_ANSWER;
-import static hexlet.code.Engine.getCongratulation;
-import static hexlet.code.Engine.getCorrectAnswer;
-import static hexlet.code.Engine.getDescription;
-import static hexlet.code.Engine.getWrongAnswer;
+import static hexlet.code.Engine.*;
 
 public class Prime {
 
@@ -24,7 +18,7 @@ public class Prime {
 
             System.out.print("Question: ");
 
-            var randomNumber = Engine.getRandomNumber();
+            var randomNumber = getRandomNumber();
             var rightAnswer = getPrime(randomNumber);
 
             System.out.println(randomNumber);
@@ -32,7 +26,7 @@ public class Prime {
 
             System.out.print("Your answer: ");
 
-            var answerUser = Engine.getConsole().nextLine();
+            var answerUser = getConsole().nextLine();
 
             if ((answerUser.equals(ANSWER_YES) && randomNumber == rightAnswer)
                     || (answerUser.equals(ANSWER_NO) && randomNumber != rightAnswer)) {
