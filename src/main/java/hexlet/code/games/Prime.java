@@ -2,13 +2,23 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-public class Prime extends Engine {
+import static hexlet.code.Engine.ANSWER_NO;
+import static hexlet.code.Engine.ANSWER_YES;
+import static hexlet.code.Engine.CORRECT_ANSWER;
+import static hexlet.code.Engine.getCongratulation;
+import static hexlet.code.Engine.getCorrectAnswer;
+import static hexlet.code.Engine.getDescription;
+import static hexlet.code.Engine.getWrongAnswer;
+
+public class Prime {
+
+    private static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void primeGame() {
 
         var name = Engine.greetUser();
 
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        getDescription(DESCRIPTION);
 
         for (int i = 0; i < CORRECT_ANSWER; i++) {
 
@@ -19,9 +29,10 @@ public class Prime extends Engine {
 
             System.out.println(randomNumber);
 
+
             System.out.print("Your answer: ");
 
-            var answerUser = getConsole().nextLine();
+            var answerUser = Engine.getConsole().nextLine();
 
             if ((answerUser.equals(ANSWER_YES) && randomNumber == rightAnswer)
                     || (answerUser.equals(ANSWER_NO) && randomNumber != rightAnswer)) {

@@ -28,8 +28,8 @@ public class App {
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
-        Scanner console = new Scanner(System.in);
-        var numberGame = console.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        var numberGame = scanner.nextInt();
         System.out.println();
 
         if (numberGame == GAME_EXIT) {

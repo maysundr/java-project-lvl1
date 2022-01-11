@@ -2,14 +2,24 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
+import static hexlet.code.Engine.CORRECT_ANSWER;
+import static hexlet.code.Engine.getCongratulation;
+import static hexlet.code.Engine.getConsole;
+import static hexlet.code.Engine.getCorrectAnswer;
+import static hexlet.code.Engine.getDescription;
+import static hexlet.code.Engine.getWrongAnswer;
+import static hexlet.code.Engine.greetUser;
 
-public class Progression extends Engine {
+
+public class Progression {
+
+    private static final String DESCRIPTION = "What number is missing in the progression?";
 
     public static void progressionGame() {
 
-        var name = Engine.greetUser();
+        var name = greetUser();
 
-        System.out.println("What number is missing in the progression?");
+        getDescription(DESCRIPTION);
 
         for (int i = 0; i < CORRECT_ANSWER; i++) {
 
@@ -24,12 +34,12 @@ public class Progression extends Engine {
                 if (rightAnswer == answerUser) {
                     getCorrectAnswer();
                 } else {
-                    getWrongAnswer(answerUser, rightAnswer, name);
+                    getWrongAnswer(String.valueOf(answerUser), String.valueOf(rightAnswer), name);
                 }
             } else {
                 var answerUser = getConsole().nextLine();
                 System.out.println(answerUser);
-                getWrongAnswer(answerUser, rightAnswer, name);
+                getWrongAnswer(answerUser, String.valueOf(rightAnswer), name);
             }
         }
         getCongratulation(name);
@@ -38,9 +48,9 @@ public class Progression extends Engine {
     private static int getProgression() {
 
         final int lengthProgression = 10;
-        final int missingElement = generateRandomInt(lengthProgression);
-        final int startElement = generateRandomInt(lengthProgression);
-        final int stepProgression = generateRandomInt(lengthProgression + 1);
+        final int missingElement = Engine.generateRandomInt(lengthProgression);
+        final int startElement = Engine.generateRandomInt(lengthProgression);
+        final int stepProgression = Engine.generateRandomInt(lengthProgression + 1);
 
         int[] progression = new int[lengthProgression];
 
@@ -60,7 +70,6 @@ public class Progression extends Engine {
             }
         }
         System.out.println(sb);
-        //System.out.println(rightAnswer);
         return rightAnswer;
 
     }

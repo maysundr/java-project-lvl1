@@ -3,18 +3,29 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
+import static hexlet.code.Engine.ANSWER_NO;
+import static hexlet.code.Engine.ANSWER_YES;
+import static hexlet.code.Engine.CORRECT_ANSWER;
+import static hexlet.code.Engine.getCongratulation;
+import static hexlet.code.Engine.getCorrectAnswer;
+import static hexlet.code.Engine.getDescription;
+import static hexlet.code.Engine.getRandomNumber;
+import static hexlet.code.Engine.getWrongAnswer;
+import static hexlet.code.Engine.greetUser;
 
-public class Even extends Engine {
 
+public class Even {
+
+    private static final String DESCRIPTION = "Answer 'yes' if number even otherwise answer 'no'.";
     public static void evenGame() {
 
-        var name = Engine.greetUser();
+        var name = greetUser();
 
-        System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
+        getDescription(DESCRIPTION);
 
         for (int i = 0; i < CORRECT_ANSWER; i++) {
 
-            var randomNumber = Engine.getRandomNumber();
+            var randomNumber = getRandomNumber();
 
             System.out.println("Question: " + randomNumber);
             var answerUser = Engine.getAnswerUser();

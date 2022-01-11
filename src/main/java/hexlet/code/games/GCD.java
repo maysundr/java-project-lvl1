@@ -1,20 +1,28 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
+import static hexlet.code.Engine.CORRECT_ANSWER;
+import static hexlet.code.Engine.getCongratulation;
+import static hexlet.code.Engine.getConsole;
+import static hexlet.code.Engine.getCorrectAnswer;
+import static hexlet.code.Engine.getDescription;
+import static hexlet.code.Engine.getRandomNumber;
+import static hexlet.code.Engine.getWrongAnswer;
+import static hexlet.code.Engine.greetUser;
 
-public class GCD extends Engine {
+public class GCD {
 
+    private static final String DESCRIPTION = "Find the greatest common divisor of given numbers.";
 
     public static void gcdGame() {
 
-        var name = Engine.greetUser();
+        var name = greetUser();
 
-        System.out.println("Find the greatest common divisor of given numbers.");
+        getDescription(DESCRIPTION);
 
         for (int i = 0; i < CORRECT_ANSWER; i++) {
 
-            var randomNumberLeft = Engine.getRandomNumber();
-            var randomNumberRight = Engine.getRandomNumber();
+            var randomNumberLeft = getRandomNumber();
+            var randomNumberRight = getRandomNumber();
 
             System.out.print("Question: ");
             System.out.println(randomNumberLeft + " " + randomNumberRight);
@@ -28,11 +36,11 @@ public class GCD extends Engine {
                 if (answerUser == rightAnswer) {
                     getCorrectAnswer();
                 } else {
-                    getWrongAnswer(answerUser, rightAnswer, name);
+                    getWrongAnswer(String.valueOf(answerUser), String.valueOf(rightAnswer), name);
                 }
             } else {
                 var answerUser = getConsole().nextLine();
-                getWrongAnswer(answerUser, rightAnswer, name);
+                getWrongAnswer(answerUser, String.valueOf(rightAnswer), name);
             }
         }
         getCongratulation(name);

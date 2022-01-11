@@ -4,18 +4,28 @@ import hexlet.code.Engine;
 
 import java.util.Random;
 
-public class Calc extends Engine {
+import static hexlet.code.Engine.MAX_BOUND_RANDOM;
+import static hexlet.code.Engine.getCongratulation;
+import static hexlet.code.Engine.getConsole;
+import static hexlet.code.Engine.getCorrectAnswer;
+import static hexlet.code.Engine.getDescription;
+import static hexlet.code.Engine.getRandomNumber;
+import static hexlet.code.Engine.getWrongAnswer;
+
+public class Calc {
+
+    private static final String DESCRIPTION = "What is the result of the expression?";
 
     public static void calcGame() {
 
         var name = Engine.greetUser();
 
-        System.out.println("What is the result of the expression?");
+        getDescription(DESCRIPTION);
 
-        for (int i = 0; i < CORRECT_ANSWER; i++) {
+        for (int i = 0; i < Engine.CORRECT_ANSWER; i++) {
 
-            var randomNumberLeft = Engine.getRandomNumber();
-            var randomNumberRight = Engine.getRandomNumber();
+            var randomNumberLeft = getRandomNumber();
+            var randomNumberRight = getRandomNumber();
             var operator = getExpression();
 
             System.out.print("Question: ");
@@ -31,11 +41,11 @@ public class Calc extends Engine {
                 if (answerUser == rightAnswer) {
                     getCorrectAnswer();
                 } else {
-                    getWrongAnswer(answerUser, rightAnswer, name);
+                    getWrongAnswer(String.valueOf(answerUser), String.valueOf(rightAnswer), name);
                 }
             } else {
                 var answerUser = getConsole().nextLine();
-                getWrongAnswer(answerUser, rightAnswer, name);
+                getWrongAnswer(answerUser, String.valueOf(rightAnswer), name);
             }
         }
         getCongratulation(name);
