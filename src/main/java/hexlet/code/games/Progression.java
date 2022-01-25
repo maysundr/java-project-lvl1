@@ -14,6 +14,8 @@ import static hexlet.code.Engine.greetUser;
 public class Progression {
 
     private static final String DESCRIPTION = "What number is missing in the progression?";
+    private static final int LENGTH_PROGRESSION = 10;
+    private static int[] progression = new int[LENGTH_PROGRESSION];
 
     public static void progressionGame() {
 
@@ -23,9 +25,9 @@ public class Progression {
 
         for (int i = 0; i < CORRECT_ANSWER; i++) {
 
-            System.out.print("Question: ");
-
             var rightAnswer = getProgression();
+
+            System.out.println("Question: " + getViewOfProgression(rightAnswer));
 
             System.out.print("Your answer: ");
 
@@ -45,32 +47,35 @@ public class Progression {
         getCongratulation(name);
     }
 
-    private static int getProgression() {
-
-        final int lengthProgression = 10;
-        final int missingElement = Engine.generateRandomInt(lengthProgression);
-        final int startElement = Engine.generateRandomInt(lengthProgression);
-        final int stepProgression = Engine.generateRandomInt(lengthProgression + 1);
-
-        int[] progression = new int[lengthProgression];
-
+    private static String getViewOfProgression(int missingElement) {
         StringBuilder sb = new StringBuilder();
-
-        int rightAnswer = 0;
-
-        for (int i = 0; i < lengthProgression; i++) {
-
-            progression[i] = startElement + stepProgression * i;
-
-            if (i == missingElement) {
-                rightAnswer = progression[i];
+        for (int i = 0; i < LENGTH_PROGRESSION; i++) {
+            if (progression[i] == missingElement) {
                 sb.append(".. ");
             } else {
                 sb.append(progression[i]).append(" ");
             }
         }
-        System.out.println(sb);
-        return rightAnswer;
+        return sb.toString();
+    }
 
+    private static int getProgression() {
+
+        int missingElement = Engine.generateRandomInt(LENGTH_PROGRESSION);
+        int startElement = Engine.generateRandomInt(LENGTH_PROGRESSION);
+        int stepProgression = Engine.generateRandomInt(LENGTH_PROGRESSION + 1);
+
+        int rightAnswer = 0;
+
+        for (int i = 0; i < LENGTH_PROGRESSION; i++) {
+
+            progression[i] = startElement + stepProgression * i;
+
+            if (i == missingElement) {
+                rightAnswer = progression[i];
+
+            }
+        }
+        return rightAnswer;
     }
 }
