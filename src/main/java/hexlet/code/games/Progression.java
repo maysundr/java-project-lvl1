@@ -73,7 +73,6 @@ public class Progression {
 
             if (i == missingElement) {
                 rightAnswer = progression[i];
-
             }
         }
         return rightAnswer;
