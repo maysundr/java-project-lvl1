@@ -30,9 +30,11 @@ public class Engine {
         return userName;
     }
 
-    public static void getDescription(String description) {
+    /*public static void getDescription(String description) {
         System.out.println(description);
     }
+
+     */
 
     public static int getRandomNumber() {
         final var factor = 100;
@@ -45,17 +47,19 @@ public class Engine {
         return random.nextInt(upperRange);
     }
 
-    public static String getAnswerUser() {
+    /*public static String getAnswerUser() {
         System.out.print("Your answer: ");
         String answerUser = scanner.nextLine();
         return answerUser;
     }
 
+     */
+
     public static Scanner getConsole() {
         return scanner;
     }
 
-    public static void getCorrectAnswer() {
+    /*public static void getCorrectAnswer() {
         System.out.println("Correct!");
         score++;
     }
@@ -68,6 +72,35 @@ public class Engine {
     }
 
     public static void getCongratulation(String name) {
+        if (score == CORRECT_ANSWER) {
+            System.out.println("Congratulations, " + name + "!");
+        }
+    }
+
+     */
+
+    public static void startEngine(String description, String[] question, String[] rightAnswer) {
+        var name = greetUser();
+        System.out.println(description);
+        for (int i = 0; i < Engine.CORRECT_ANSWER; i++) {
+
+            System.out.println("Question: " + question[i]);
+
+            System.out.print("Your answer: ");
+
+            var answerUser = getConsole().next();
+
+            if (String.valueOf(answerUser).equals(rightAnswer[i])) {
+                System.out.println("Correct!");
+                score++;
+            } else {
+                System.out.println("'" + answerUser + "'"
+                            + " is wrong answer ;(. Correct answer was " + "'" + rightAnswer[i] + "'" + ".");
+                System.out.println("Let's try again, " + name + "!");
+                System.exit(0);
+            }
+        }
+
         if (score == CORRECT_ANSWER) {
             System.out.println("Congratulations, " + name + "!");
         }

@@ -1,25 +1,30 @@
 package hexlet.code.games;
 
 
-import hexlet.code.Engine;
-
 import static hexlet.code.Engine.ANSWER_NO;
 import static hexlet.code.Engine.ANSWER_YES;
 import static hexlet.code.Engine.CORRECT_ANSWER;
-import static hexlet.code.Engine.getCongratulation;
-import static hexlet.code.Engine.getCorrectAnswer;
-import static hexlet.code.Engine.getDescription;
 import static hexlet.code.Engine.getRandomNumber;
-import static hexlet.code.Engine.getWrongAnswer;
-import static hexlet.code.Engine.greetUser;
+import static hexlet.code.Engine.startEngine;
 
 
 public class Even {
 
-    private static final String DESCRIPTION = "Answer 'yes' if number even otherwise answer 'no'.";
     public static void evenGame() {
 
-        var name = greetUser();
+        String description = "Answer 'yes' if number even otherwise answer 'no'.";
+
+        String[] questionArr = new String[CORRECT_ANSWER];
+        String[] rightAnswerArr = new String[CORRECT_ANSWER];
+        for (int i = 0; i < questionArr.length; i++) {
+            int number = getRandomNumber();
+            questionArr[i] = String.valueOf(number);
+            rightAnswerArr[i] = number % 2 == 0 ? ANSWER_YES : ANSWER_NO;
+
+        }
+        startEngine(description, questionArr, rightAnswerArr);
+    }
+        /*var name = greetUser();
 
         getDescription(DESCRIPTION);
 
@@ -43,4 +48,6 @@ public class Even {
         }
         getCongratulation(name);
     }
+
+         */
 }

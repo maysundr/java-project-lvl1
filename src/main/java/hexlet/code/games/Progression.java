@@ -3,23 +3,31 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 import static hexlet.code.Engine.CORRECT_ANSWER;
-import static hexlet.code.Engine.getCongratulation;
-import static hexlet.code.Engine.getConsole;
-import static hexlet.code.Engine.getCorrectAnswer;
-import static hexlet.code.Engine.getDescription;
-import static hexlet.code.Engine.getWrongAnswer;
-import static hexlet.code.Engine.greetUser;
+import static hexlet.code.Engine.startEngine;
 
 
 public class Progression {
 
-    private static final String DESCRIPTION = "What number is missing in the progression?";
+    //private static final String DESCRIPTION = "What number is missing in the progression?";
     private static final int LENGTH_PROGRESSION = 10;
     private static int[] progression = new int[LENGTH_PROGRESSION];
 
     public static void progressionGame() {
 
-        var name = greetUser();
+        String description = "What number is missing in the progression?";
+
+        String[] questionArr = new String[CORRECT_ANSWER];
+        String[] rightAnswerArr = new String[CORRECT_ANSWER];
+        int[] checkArr = new int[CORRECT_ANSWER];
+        for (int i = 0; i < questionArr.length; i++) {
+
+            checkArr[i] = getProgression();
+            questionArr[i] = "Question: " + getViewOfProgression(checkArr[i]);
+            rightAnswerArr[i] = String.valueOf(checkArr[i]);
+        }
+        startEngine(description, questionArr, rightAnswerArr);
+
+        /*var name = greetUser();
 
         getDescription(DESCRIPTION);
 
@@ -45,6 +53,8 @@ public class Progression {
             }
         }
         getCongratulation(name);
+
+         */
     }
 
     private static String getViewOfProgression(int missingElement) {
