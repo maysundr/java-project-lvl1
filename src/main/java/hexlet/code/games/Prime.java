@@ -52,9 +52,9 @@ public class Prime {
 
 
     private static int getPrime(int number) {
-        for (int i = 2; i < number; i++) {
-            if (number % i == 0) {
-                return i;
+        for (int j = 2; j < number; j++) {
+            if (number % j == 0) {
+                return j;
             }
         }
         return number;
