@@ -23,7 +23,6 @@ public class Progression {
             rightAnswerArr[i] = String.valueOf(rightAnswer);
         }
         startEngine(description, questionArr, rightAnswerArr);
-
     }
 
     private static String getViewOfProgression(int missingElement) {
@@ -51,6 +50,5 @@ public class Progression {
         }
         return rightAnswer;
     }
- //
- //
+
 }
