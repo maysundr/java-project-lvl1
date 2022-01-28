@@ -25,17 +25,6 @@ public class Progression {
         startEngine(description, questionArr, rightAnswerArr);
     }
 
-    private static String getViewOfProgression(int missingElement) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < LENGTH_PROGRESSION; i++) {
-            if (progression[i] == missingElement) {
-                sb.append(".. ");
-            } else {
-                sb.append(progression[i]).append(" ");
-            }
-        }
-        return sb.toString();
-    }
 
     private static int getProgression() {
         int missingElement = Engine.generateRandomInt(LENGTH_PROGRESSION);
@@ -49,6 +38,18 @@ public class Progression {
             }
         }
         return rightAnswer;
+    }
+
+    private static String getViewOfProgression(int missingElement) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < LENGTH_PROGRESSION; i++) {
+            if (progression[i] == missingElement) {
+                sb.append(".. ");
+            } else {
+                sb.append(progression[i]).append(" ");
+            }
+        }
+        return sb.toString();
     }
 
 }
