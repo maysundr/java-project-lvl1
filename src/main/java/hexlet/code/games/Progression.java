@@ -40,6 +40,7 @@ public class Progression {
         return rightAnswer;
     }
 
+
     private static String getViewOfProgression(int missingElement) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < LENGTH_PROGRESSION; i++) {
@@ -49,7 +50,7 @@ public class Progression {
                 sb.append(progression[i]).append(" ");
             }
         }
-        return sb.toString();
+        return sb.toString().trim();
     }
 
 }
