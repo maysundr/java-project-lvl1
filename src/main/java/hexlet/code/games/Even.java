@@ -24,30 +24,5 @@ public class Even {
         }
         startEngine(description, questionArr, rightAnswerArr);
     }
-        /*var name = greetUser();
 
-        getDescription(DESCRIPTION);
-
-        for (int i = 0; i < CORRECT_ANSWER; i++) {
-
-            var randomNumber = getRandomNumber();
-
-            System.out.println("Question: " + randomNumber);
-            var answerUser = Engine.getAnswerUser();
-
-            if ((answerUser.equals(ANSWER_YES) && randomNumber % 2 == 0)
-                    || (answerUser.equals(ANSWER_NO) && randomNumber % 2 != 0)) {
-                getCorrectAnswer();
-            } else if (answerUser.equals(ANSWER_YES)) {
-                getWrongAnswer(answerUser, ANSWER_NO, name);
-            } else if (answerUser.equals(ANSWER_NO)) {
-                getWrongAnswer(answerUser, ANSWER_YES, name);
-            } else {
-                getWrongAnswer(answerUser, ANSWER_NO, name);
-            }
-        }
-        getCongratulation(name);
-    }
-
-         */
 }

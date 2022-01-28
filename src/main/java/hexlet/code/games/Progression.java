@@ -24,34 +24,6 @@ public class Progression {
         }
         startEngine(description, questionArr, rightAnswerArr);
 
-        /*var name = greetUser();
-
-        getDescription(DESCRIPTION);
-
-        for (int i = 0; i < CORRECT_ANSWER; i++) {
-
-            var rightAnswer = getProgression();
-
-            System.out.println("Question: " + getViewOfProgression(rightAnswer));
-
-            System.out.print("Your answer: ");
-
-            if (getConsole().hasNextInt()) {
-                var answerUser = getConsole().nextInt();
-                if (rightAnswer == answerUser) {
-                    getCorrectAnswer();
-                } else {
-                    getWrongAnswer(String.valueOf(answerUser), String.valueOf(rightAnswer), name);
-                }
-            } else {
-                var answerUser = getConsole().nextLine();
-                System.out.println(answerUser);
-                getWrongAnswer(answerUser, String.valueOf(rightAnswer), name);
-            }
-        }
-        getCongratulation(name);
-
-         */
     }
 
     private static String getViewOfProgression(int missingElement) {
@@ -65,43 +37,6 @@ public class Progression {
         }
         return sb.toString();
     }
-
-    /*private static String getProgression() {
-
-        int startElement = Engine.generateRandomInt(LENGTH_PROGRESSION);
-        int stepProgression = Engine.generateRandomInt(LENGTH_PROGRESSION + 1);
-
-        int missingElement = Engine.generateRandomInt(LENGTH_PROGRESSION);
-
-        for (int i = 0; i < LENGTH_PROGRESSION; i++) {
-
-            progression[i] = startElement + stepProgression * i;
-
-        }
-
-        for (int i = 0; i < LENGTH_PROGRESSION; i++) {
-            if (i == missingElement) {
-                rightAnswer = progression[i];
-            }
-        }
-        return rightAnswer;
-    }
-    }
-
-     */
-
-    /*private static int getRightAnswer() {
-        int missingElement = Engine.generateRandomInt(LENGTH_PROGRESSION);
-        int rightAnswer = 0;
-        for (int i = 0; i < LENGTH_PROGRESSION; i++) {
-            if (i == missingElement) {
-                rightAnswer = progression[i];
-            }
-        }
-        return rightAnswer;
-    }
-
-     */
 
     private static int getProgression() {
         int missingElement = Engine.generateRandomInt(LENGTH_PROGRESSION);

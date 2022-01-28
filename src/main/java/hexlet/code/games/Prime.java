@@ -27,38 +27,6 @@ public class Prime {
         }
         startEngine(description, questionArr, rightAnswerArr);
 
-        /*var name = greetUser();
-
-        getDescription(DESCRIPTION);
-
-        for (int i = 0; i < CORRECT_ANSWER; i++) {
-
-            System.out.print("Question: ");
-
-            var randomNumber = getRandomNumber();
-            var rightAnswer = getPrime(randomNumber);
-
-            System.out.println(randomNumber);
-
-
-            System.out.print("Your answer: ");
-
-            var answerUser = getConsole().nextLine();
-
-            if ((answerUser.equals(ANSWER_YES) && randomNumber == rightAnswer)
-                    || (answerUser.equals(ANSWER_NO) && randomNumber != rightAnswer)) {
-                getCorrectAnswer();
-            } else if (answerUser.equals(ANSWER_YES)) {
-                getWrongAnswer(answerUser, ANSWER_NO, name);
-            } else if (answerUser.equals(ANSWER_NO)) {
-                getWrongAnswer(answerUser, ANSWER_YES, name);
-            } else {
-                getWrongAnswer(answerUser, ANSWER_NO, name);
-            }
-        }
-        getCongratulation(name);
-
-         */
     }
 
 

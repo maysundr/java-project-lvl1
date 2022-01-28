@@ -30,11 +30,6 @@ public class Engine {
         return userName;
     }
 
-    /*public static void getDescription(String description) {
-        System.out.println(description);
-    }
-
-     */
 
     public static int getRandomNumber() {
         final var factor = 100;
@@ -47,37 +42,9 @@ public class Engine {
         return random.nextInt(upperRange);
     }
 
-    /*public static String getAnswerUser() {
-        System.out.print("Your answer: ");
-        String answerUser = scanner.nextLine();
-        return answerUser;
-    }
-
-     */
-
     public static Scanner getConsole() {
         return scanner;
     }
-
-    /*public static void getCorrectAnswer() {
-        System.out.println("Correct!");
-        score++;
-    }
-
-    public static void getWrongAnswer(String answerUser, String rightAnswer, String name) {
-        System.out.println("'" + answerUser + "'"
-                + " is wrong answer ;(. Correct answer was " + "'" + rightAnswer + "'" + ".");
-        System.out.println("Let's try again, " + name + "!");
-        System.exit(0);
-    }
-
-    public static void getCongratulation(String name) {
-        if (score == CORRECT_ANSWER) {
-            System.out.println("Congratulations, " + name + "!");
-        }
-    }
-
-     */
 
     public static void startEngine(String description, String[] question, String[] rightAnswer) {
         var name = greetUser();
