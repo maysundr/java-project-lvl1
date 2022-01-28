@@ -6,8 +6,6 @@ import static hexlet.code.Engine.startEngine;
 
 public class GCD {
 
-    //private static final String DESCRIPTION = "Find the greatest common divisor of given numbers.";
-
     public static void gcdGame() {
 
         String description = "Find the greatest common divisor of given numbers.";

@@ -9,8 +9,6 @@ import static hexlet.code.Engine.startEngine;
 
 public class Prime {
 
-    //private static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-
     public static void primeGame() {
 
         String description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
