@@ -67,9 +67,6 @@ public class Engine {
                 System.exit(0);
             }
         }
-
-        if (score == CORRECT_ANSWER) {
             System.out.println("Congratulations, " + name + "!");
-        }
     }
 }
