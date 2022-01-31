@@ -13,16 +13,14 @@ public class Even {
     public static void evenGame() {
 
         String description = "Answer 'yes' if number even otherwise answer 'no'.";
-
-        String[] questionArr = new String[CORRECT_ANSWER];
-        String[] rightAnswerArr = new String[CORRECT_ANSWER];
-        for (int i = 0; i < questionArr.length; i++) {
+        String[][] questionAndRightAnswer = new String[CORRECT_ANSWER][2];
+        for (int i = 0; i < questionAndRightAnswer.length; i++) {
             int number = getRandomNumber();
-            questionArr[i] = String.valueOf(number);
-            rightAnswerArr[i] = number % 2 == 0 ? ANSWER_YES : ANSWER_NO;
+            questionAndRightAnswer[i][0] = String.valueOf(number);
+            questionAndRightAnswer[i][1] = number % 2 == 0 ? ANSWER_YES : ANSWER_NO;
 
         }
-        startEngine(description, questionArr, rightAnswerArr);
+        startEngine(description, questionAndRightAnswer);
     }
 
 }

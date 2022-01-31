@@ -14,15 +14,13 @@ public class Progression {
     public static void progressionGame() {
 
         String description = "What number is missing in the progression?";
-
-        String[] questionArr = new String[CORRECT_ANSWER];
-        String[] rightAnswerArr = new String[CORRECT_ANSWER];
-        for (int i = 0; i < questionArr.length; i++) {
+        String[][] questionAndRightAnswer = new String[CORRECT_ANSWER][2];
+        for (int i = 0; i < questionAndRightAnswer.length; i++) {
             int rightAnswer = getProgression();
-            questionArr[i] = getViewOfProgression(rightAnswer);
-            rightAnswerArr[i] = String.valueOf(rightAnswer);
+            questionAndRightAnswer[i][0] = getViewOfProgression(rightAnswer);
+            questionAndRightAnswer[i][1] = String.valueOf(rightAnswer);
         }
-        startEngine(description, questionArr, rightAnswerArr);
+        startEngine(description, questionAndRightAnswer);
     }
 
 

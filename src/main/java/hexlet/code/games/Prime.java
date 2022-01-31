@@ -12,18 +12,16 @@ public class Prime {
     public static void primeGame() {
 
         String description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-
-        String[] questionArr = new String[CORRECT_ANSWER];
-        String[] rightAnswerArr = new String[CORRECT_ANSWER];
-        for (int i = 0; i < questionArr.length; i++) {
+        String[][] questionAndRightAnswer = new String[CORRECT_ANSWER][2];
+        for (int i = 0; i < questionAndRightAnswer.length; i++) {
 
             var randomNumber = getRandomNumber();
 
-            questionArr[i] = String.valueOf(randomNumber);
-            rightAnswerArr[i] = isPrime(randomNumber) ? ANSWER_YES : ANSWER_NO;
+            questionAndRightAnswer[i][0] = String.valueOf(randomNumber);
+            questionAndRightAnswer[i][1] = isPrime(randomNumber) ? ANSWER_YES : ANSWER_NO;
 
         }
-        startEngine(description, questionArr, rightAnswerArr);
+        startEngine(description, questionAndRightAnswer);
 
     }
 

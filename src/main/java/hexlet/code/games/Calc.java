@@ -13,17 +13,17 @@ public class Calc {
 
     public static void calcGame() {
         String description = "What is the result of the expression?";
-        String[] questionArr = new String[CORRECT_ANSWER];
-        String[] rightAnswerArr = new String[CORRECT_ANSWER];
-        for (int i = 0; i < questionArr.length; i++) {
+        String[][] questionAndRightAnswer = new String[CORRECT_ANSWER][2];
+        for (int i = 0; i < questionAndRightAnswer.length; i++) {
             var randomNumberLeft = getRandomNumber();
             var randomNumberRight = getRandomNumber();
             var operator = getExpression();
-            questionArr[i] = randomNumberLeft + " " + operator + " " + randomNumberRight;
-            rightAnswerArr[i] = String.valueOf(getResultExpression(randomNumberLeft, randomNumberRight, operator));
+            questionAndRightAnswer[i][0] = randomNumberLeft + " " + operator + " " + randomNumberRight;
+            questionAndRightAnswer[i][1]
+                    = String.valueOf(getResultExpression(randomNumberLeft, randomNumberRight, operator));
 
         }
-        startEngine(description, questionArr, rightAnswerArr);
+        startEngine(description, questionAndRightAnswer);
     }
 
 

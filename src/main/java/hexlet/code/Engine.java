@@ -46,23 +46,24 @@ public class Engine {
         return scanner;
     }
 
-    public static void startEngine(String description, String[] question, String[] rightAnswer) {
+    public static void startEngine(String description, String[][] questionAndRightAnswer) {
         var name = greetUser();
         System.out.println(description);
         for (int i = 0; i < Engine.CORRECT_ANSWER; i++) {
 
-            System.out.println("Question: " + question[i]);
+            System.out.println("Question: " + questionAndRightAnswer[i][0]);
 
             System.out.print("Your answer: ");
 
             var answerUser = getConsole().next();
 
-            if (String.valueOf(answerUser).equals(rightAnswer[i])) {
+            if (String.valueOf(answerUser).equals(questionAndRightAnswer[i][1])) {
                 System.out.println("Correct!");
                 score++;
             } else {
                 System.out.println("'" + answerUser + "'"
-                            + " is wrong answer ;(. Correct answer was " + "'" + rightAnswer[i] + "'" + ".");
+                            + " is wrong answer ;(. Correct answer was " + "'"
+                            + questionAndRightAnswer[i][1] + "'" + ".");
                 System.out.println("Let's try again, " + name + "!");
                 System.exit(0);
             }
