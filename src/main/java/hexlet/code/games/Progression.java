@@ -48,7 +48,6 @@ public class Progression {
                 sb.append(progression[i]).append(" ");
             }
         }
-        return sb.toString();
+        return sb.toString().trim();
     }
-
 }
