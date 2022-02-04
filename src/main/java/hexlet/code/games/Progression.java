@@ -16,7 +16,7 @@ public class Progression {
         String description = "What number is missing in the progression?";
         String[][] questionAndRightAnswer = new String[CORRECT_ANSWER][2];
         for (int i = 0; i < questionAndRightAnswer.length; i++) {
-            int rightAnswer = getProgression();
+            int rightAnswer = getRightAnswer();
             questionAndRightAnswer[i][0] = getViewOfProgression(rightAnswer);
             questionAndRightAnswer[i][1] = String.valueOf(rightAnswer);
         }
@@ -24,7 +24,7 @@ public class Progression {
     }
 
 
-    private static int getProgression() {
+    private static int getRightAnswer() {
         int missingElement = Engine.generateRandomInt(LENGTH_PROGRESSION);
         int startElement = Engine.generateRandomInt(LENGTH_PROGRESSION);
         int stepProgression = Engine.generateRandomInt(LENGTH_PROGRESSION + 1);
